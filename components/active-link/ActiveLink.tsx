@@ -13,11 +13,9 @@ export const ActiveLink = ({ path, text }: Props) => {
 
     const pathName = usePathname();
 
-    console.log(pathName)
-
     return (
         <Link
-            className={`${style.link} ${style['active-link']}`}
+            className={`${style.link} ${pathName === path && style['active-link']}`}
             href={path}
         >
             {text}
